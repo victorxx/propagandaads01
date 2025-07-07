@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -87,6 +86,20 @@
         left: 0;
       }
     }
+
+    #randomString {
+      font-family: 'Courier New', Courier, monospace;
+      margin-top: 30px;
+      text-align: center;
+      color: #333;
+      padding: 20px;
+      background-color: #e1e1e1;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
 <body>
@@ -113,12 +126,18 @@
   </button>
 </div>
 
+<!-- Seção de Strings Aleatórias -->
+<div id="randomString"></div>
+
 <script>
   const promoOptions = [
     {
       url: "https://remarkable-gelato-4db597.netlify.app/consorciopagina.html",
       text: "CONFIRA VÁRIOS TIPOS DE CONSÓRCIO. SAIBA COMO FUNCIONA. ESTAMOS À DISPOSIÇÃO!"
     },
+
+    {url:"2.html",text:"CONFIRA A OPORTUNIDADE"},
+    
     {
       url: "https://geocredibnkvitoria.com/",
       text: "CRÉDITO PESSOAL DISPONÍVEL! FAÇA UMA SIMULAÇÃO GRATUITA."
@@ -131,119 +150,7 @@
       url: "https://remarkable-gelato-4db597.netlify.app/",
       text: "CONFIRA ESSAS OPORTUNIDADES AGORA MESMO! → VPS MÁQUINA MELHOR PREÇO"
     },
-
-    {
-      url: "https://www.espiritosanto-es.com.br/",
-      text: "CONFIRA ESSE CONTEÚDO DE ALTA QUALIDADE"
-    },
-
-    {
-      url: "https://filmeseserie.com.br/empresa/",
-      text: "CONFIRA ESSAS EMPRESAS AQUI"
-    },
-
-    {
-      url: "https://jogosantigos472302513.wordpress.com/",
-      text: "TUDO SOBRE GAMES"
-    },
-    {
-      url: "https://brasilbrasileiross.blogspot.com/",
-      text: "portal do brasil"
-    },
-    {
-      url: "https://oscriadoresmaisengracadoskdj.blogspot.com/",
-      text: "os criadores de youtube mais engraçados do youtube"
-    },
-    {
-      url: "https://horavoo-git-main-victorsaibs-projects.vercel.app/",
-      text: "horário de voos descubra"
-    },
-    {
-      url: "https://bibliadonline.netlify.app/",
-      text: "versiculos biblicos confira"
-    },
-    {
-      url: "https://bibliadonline.netlify.app/",
-      text: "versiculos biblicos confira"
-    },
-      {
-      url: "https://hostinger.com.br?REFERRALCODE=SSNVICTORXU8",
-      text: "HOSPEDAGEM DE SITE BARATO CONFIRA"
-    },
-     {
-      url: "https://shrtfly.com/ref/xxvitaoxx",
-      text: "Ganhe dinheiro compartilhando links"
-    },
-       {
-      url: "https://www.airbnb.com.br/r/saibvictore?s=6&t=061n0g",
-      text: "Comece no Airbnb hoje mesmo! "
-    },
-       {
-      url: "https://ocomerciobrasileironoticia.blogspot.com/",
-      text: "ERP PARA EMPRESAS CONFIRA! "
-    },
-    {
-      url: "https://guaraparilinhadotempo.vercel.app/",
-      text: "linha do tempo guarapari es "
-    },
-    {
-      url: "https://linhadotempoguarapari.netlify.app/",
-      text: "LINHA DO TEMPO GUARAPARI ES "
-    },
-     {
-      url: "https://vpserp.vercel.app/",
-      text: "Soluções em ERP, VPS e Hospedagem "
-    },
-     {
-      url: "https://vpserp.vercel.app/",
-      text: "Soluções em ERP, VPS e Hospedagem "
-    },
-    {
-      url: "https://espiritosantolinhadotempovideo.vercel.app/",
-      text: "CONFIRA ESSES VÍDEOS "
-    },
-     {
-      url: "https://vodkavilavelhavitoria.vercel.app/",
-      text: "AS MELHORES VODKA DO MERCADO "
-    },
-    {
-      url: "https://creditopessoal.vercel.app/",
-      text: "CRÉDITO PESSOAL SEGURO ENTRE OUTROS "
-    },
-    {
-      url: "https://ifoodreclama.vercel.app/",
-      text: "IFOOD RECLAMAÇÃO"
-    },
-     {
-      url: "https://comidapodrealertaespiritosanto.vercel.app/",
-      text: "COMIDA ESTRAGADA NO ES"
-    },
-     {
-      url: "https://esfogo.vercel.app/",
-      text: "Notícias – Grande Vitória (últimos 60 dias)"
-    },
-    {
-      url: "https://drogasillinhadotempo.vercel.app/",
-      text: "Notícias da RD Saúde (Drogasil)"
-    },
-     {
-      url: "https://congeladotimeline.vercel.app/",
-      text: "Ofertas de arrepiar no frio de Vitória – ES"
-    },
-    {
-      url: "https://cavaleiroszodiacoj.netlify.app/",
-      text: "cavaleiros do zodiaco"
-    },
-    {
-      url: "https://vendernainternet9.wordpress.com/vps-avancado/",
-      text: "VPS "
-    },
-    
-    
-
-
-
-
+    // Adicione os outros links aqui conforme necessário
   ];
 
   window.addEventListener("DOMContentLoaded", () => {
@@ -275,6 +182,20 @@
       }
       document.getElementById("promo").style.display = "none";
     });
+
+    // Gerar string aleatória no final da página
+    const randomStringElement = document.getElementById("randomString");
+
+    function generateRandomString() {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let randomString = '';
+      for (let i = 0; i < 20; i++) {
+        randomString += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      randomStringElement.textContent = randomString;
+    }
+
+    generateRandomString();  // Chama a função para gerar a string aleatória
   });
 </script>
 
